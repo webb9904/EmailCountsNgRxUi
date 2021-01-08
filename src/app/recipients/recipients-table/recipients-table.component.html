@@ -1,0 +1,28 @@
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th 
+          [class.active]="order === 'EmailAddress'" 
+          (click)="setOrder('EmailAddress')">Email <i class="fa fa-sort"></i></th>
+        <th 
+          [class.active]="order === 'Department'" 
+          (click)="setOrder('Department')">Department <i class="fa fa-sort"></i></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let recipient of recipients | orderBy: order:reverse | paginate: { itemsPerPage: 5, currentPage: pageIndex }">
+        <td>{{recipient.EmailAddress}}</td>
+        <td>{{recipient.Department}}</td>
+        <td>
+          <button class="btn" [routerLink]="['/recipients/edit', recipient.Id]">
+            <i class="fa fa-lg fa-pencil-square-o"></i>
+          </button>
+          <button class="btn" (click)="deleteRecipient.next(recipient.Id)">
+            <i class="fa fa-lg fa-trash-o fa-red"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <pagination-controls (pageChange)="pageIndex = $event"></pagination-controls>

@@ -1,14 +1,104 @@
 {
-    "recipients": [
-      {
-        "id": 1,
-        "EmailAddress": "john.doe@havenpower.com",
-        "Department": "Smart Metering"
-      },
-      {
-        "EmailAddress": "jane.doe@havenpower.com",
-        "Department": "Smart Metering",
-        "id": 2
-      }
-    ]
-  }
+  "recipients": [
+    {
+      "Id": 1,
+      "EmailAddress": "Jacqueline.Bak@havenpower.com",
+      "Department": "Renewals"
+    },
+    {
+      "Id": 2,
+      "EmailAddress": "Manoj.Nair@havenpower.com",
+      "Department": "Renewals"
+    },
+    {
+      "Id": 3,
+      "EmailAddress": "Yiannis.Tsangaris@havenpower.com",
+      "Department": "Renewals"
+    },
+    {
+      "Id": 4,
+      "EmailAddress": "Joanne.Moore@havenpower.com",
+      "Department": "Renewals"
+    },
+    {
+      "Id": 5,
+      "EmailAddress": "Max.Wilding@havenpower.com",
+      "Department": "Renewals"
+    },
+    {
+      "Id": 6,
+      "EmailAddress": "Sharon.Sharp@havenpower.com",
+      "Department": "Renewals"
+    },
+    {
+      "Id": 7,
+      "EmailAddress": "Amy.Clarke@havenpower.com",
+      "Department": "Renewals"
+    },
+    {
+      "Id": 8,
+      "EmailAddress": "Steven.Lawson@havenpower.com",
+      "Department": "Renewals"
+    },
+    {
+      "Id": 9,
+      "EmailAddress": "David.Orchard@havenpower.com",
+      "Department": "Renewals"
+    },
+    {
+      "Id": 10,
+      "EmailAddress": "Rhys.Waterman@havenpower.com",
+      "Department": "Renewals"
+    },
+    {
+      "Id": 11,
+      "EmailAddress": "Limara.Ballantyne@havenpower.com",
+      "Department": "Direct Sales"
+    },
+    {
+      "Id": 12,
+      "EmailAddress": "Jonathan.Huggins@havenpower.com",
+      "Department": "Direct Sales"
+    },
+    {
+      "Id": 13,
+      "EmailAddress": "Karl.Brown@havenpower.com",
+      "Department": "Direct Sales"
+    },
+    {
+      "Id": 14,
+      "EmailAddress": "Ashley.McSheen@havenpower.com",
+      "Department": "Direct Sales"
+    },
+    {
+      "Id": 15,
+      "EmailAddress": "Craig.Parry@havenpower.com",
+      "Department": "Direct Sales"
+    },
+    {
+      "Id": 16,
+      "EmailAddress": "Jerrell.Paton@havenpower.com",
+      "Department": "Direct Sales"
+    },
+    {
+      "Id": 17,
+      "EmailAddress": "Leigh.Powell@havenpower.com",
+      "Department": "Direct Sales"
+    },
+    {
+      "Id": 18,
+      "EmailAddress": "Halis.Toy@havenpower.com",
+      "Department": "Direct Sales"
+    },
+    {
+      "Id": 19,
+      "EmailAddress": "Richard.Gooch@havenpower.com",
+      "Department": "Direct Admin"
+    },
+    {
+      "Id": 20,
+      "EmailAddress": "Lisa.Gooderham@havenpower.com",
+      "Department": "Direct Admin"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+<h2>Recipients</h2>
+<app-recipients-table 
+    [recipients]="recipients$ | async"
+    (deleteRecipient)="deleteRecipient($event)">
+</app-recipients-table>
