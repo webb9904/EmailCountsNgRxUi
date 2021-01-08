@@ -1,0 +1,12 @@
+.nav-link {
+    color: #fafafa; 
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+    font-style: italic;
+}
+
+.mat-toolbar.mat-primary {
+    background: #343a40;
+}
