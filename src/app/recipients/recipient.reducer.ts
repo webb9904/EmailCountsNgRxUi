@@ -1,3 +1,4 @@
+import { createReducer, on } from '@ngrx/store';
 import { Recipient } from './recipient';
 import * as recipientActions from './recipient.actions';
 
@@ -9,19 +10,18 @@ const initialState: State = {
     recipients: []
 }
 
-export function RecipientReducer(state = initialState, action: recipientActions.Actions): State {
-    switch (action.type) {
-        case recipientActions.LOAD_RECIPIENTS_SUCCESS: {
-            return state = {
-                recipients: action.payload
-            };
-        }
-        case recipientActions.DELETE_RECIPIENT_SUCCESS: {
-            return state = {
-                recipients: state.recipients.filter(recipient => recipient.id !== action.payload)
-            };
-        }  
-        default:
-            return state;
-    }
-}
+export const RecipientReducer = createReducer<State>(
+    initialState,
+    on(recipientActions.LoadRecipientsSuccessAction, (state, action): State => {
+        return {
+            ...state,
+            recipients: action.recipients
+        };
+    }),
+    on(recipientActions.DeleteRecipientSuccessAction, (state, action): State => {
+        return {
+            ...state,
+            recipients: state.recipients.filter(recipient => recipient.id !== action.recipientId)
+        };
+    }),
+);

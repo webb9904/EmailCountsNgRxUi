@@ -22,10 +22,10 @@ export class RecipientsListComponent implements OnInit {
   }
 
   loadRecipients(): void {
-    this.store.dispatch(new recipientActions.LoadRecipientsAction);
+    this.store.dispatch(recipientActions.LoadRecipientsAction());
   }
 
   deleteRecipient(id: number) {
-    this.store.dispatch(new recipientActions.DeleteRecipientAction(id));
+    this.store.dispatch(recipientActions.DeleteRecipientAction({ recipientId: id }));
   }
 }
