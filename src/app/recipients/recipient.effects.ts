@@ -24,7 +24,7 @@ export class RecipientEffects {
         switchMap((action: recipientActions.DeleteRecipientAction) => {
             return this.recipientService.deleteRecipient(action.payload)
             .pipe(
-                map(recipient => new recipientActions.DeleteRecipientSuccessAction(recipient.Id))
+                map(recipient => new recipientActions.DeleteRecipientSuccessAction(recipient.id))
             )
         }
     ));

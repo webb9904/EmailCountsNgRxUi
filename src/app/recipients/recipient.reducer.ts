@@ -18,7 +18,7 @@ export function RecipientReducer(state = initialState, action: recipientActions.
         }
         case recipientActions.DELETE_RECIPIENT_SUCCESS: {
             return state = {
-                recipients: state.recipients.filter(recipient => recipient.Id !== action.payload)
+                recipients: state.recipients.filter(recipient => recipient.id !== action.payload)
             };
         }  
         default:

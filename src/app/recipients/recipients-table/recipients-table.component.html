@@ -15,10 +15,10 @@
         <td>{{recipient.EmailAddress}}</td>
         <td>{{recipient.Department}}</td>
         <td>
-          <button class="btn" [routerLink]="['/recipients/edit', recipient.Id]">
+          <button class="btn" [routerLink]="['/recipients/edit', recipient.id]">
             <i class="fa fa-lg fa-pencil-square-o"></i>
           </button>
-          <button class="btn" (click)="deleteRecipient.next(recipient.Id)">
+          <button class="btn" (click)="deleteRecipient.next(recipient.id)">
             <i class="fa fa-lg fa-trash-o fa-red"></i>
           </button>
         </td>
