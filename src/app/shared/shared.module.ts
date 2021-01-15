@@ -4,12 +4,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from './material.module';
 
 import { NavbarComponent } from '../navbar/navbar.component';
+import { DatePickerComponent } from './date-picker/date-picker.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    NavbarComponent
+    NavbarComponent,
+    DatePickerComponent
   ],
   imports: [
     CommonModule,
@@ -19,6 +21,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   ],
   exports: [
     NavbarComponent,
+    DatePickerComponent,
     MaterialModule,
     ReactiveFormsModule
   ],

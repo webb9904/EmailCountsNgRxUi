@@ -1,0 +1,15 @@
+mat-form-field {
+  padding-left: 10px;
+  margin-right: 12px;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline-thick {
+  outline: 0 none;
+  border-radius: 0.2rem;
+  color: #3f51b5 !important;
+}
+
+::ng-deep .mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid .mat-form-field-outline-thick{
+  color: red !important;
+  opacity: 0.8 !important;
+}
