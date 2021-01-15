@@ -15,7 +15,7 @@ import * as moment from 'moment';
 })
 export class DatePickerComponent implements OnInit {
 
-  @Output() dateSelected = new EventEmitter<string>();
+  @Output() dateSelected = new EventEmitter<any>();
 
   public form: FormGroup;
   public submitted: boolean;
@@ -27,8 +27,9 @@ export class DatePickerComponent implements OnInit {
   }
 
   submit(): void {
-    this.submitted = false;
+    this.submitted = true;
     const date = moment(this.form.get('dateTime').value).format('YYYY-MM-DD');
-    this.dateSelected.emit(date);
+    this.dateSelected.emit({ date: date, submitted: this.submitted });
+    this.submitted = false;
   }
 }
