@@ -1,30 +1,41 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { OrderPipe } from 'ngx-order-pipe';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { Recipient } from '../recipient';
 
 @Component({
   selector: 'app-recipients-table',
   templateUrl: './recipients-table.component.html',
-  styleUrls: ['./recipients-table.component.css']
+  styleUrls: ['./recipients-table.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RecipientsTableComponent {
 
   @Input() recipients: Recipient[];
-  @Output() deleteRecipient: EventEmitter<number> = new EventEmitter<number>();
+  @Output() deleteRecipient = new EventEmitter<Recipient>();
 
-  sortedCollection: Recipient[];
+  filter: any;
+
   order: string = 'EmailAddress';
   reverse: boolean = false;
-  pageIndex: number = 1;
 
-  constructor(private orderPipe: OrderPipe) {
-    this.sortedCollection = orderPipe.transform(this.recipients, 'EmailAddress');
+  pageIndex: number = 1;
+  itemsPerPage: number = 5;
+
+  applyFilter(field: string, input: string): void {
+    this.filter = { [field]: input };
   }
 
-  setOrder(value: string) {
-    if (this.order.toLocaleLowerCase() === value.toLocaleLowerCase()) {
+  setOrder(field: string): void {
+    if (this.order.toLocaleLowerCase() === field.toLocaleLowerCase()) {
       this.reverse = !this.reverse;
     }
-    this.order = value;
+    this.order = field;
+  }
+
+  pageChange(event: number): void {
+    this.pageIndex = event;
+  }
+
+  pageBoundsCorrection(event: number): void {
+    this.pageIndex = event;
   }
 }

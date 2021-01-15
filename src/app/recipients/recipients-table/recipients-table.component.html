@@ -1,28 +1,73 @@
 <table class="table table-striped">
-    <thead>
-      <tr>
-        <th 
-          [class.active]="order === 'EmailAddress'" 
-          (click)="setOrder('EmailAddress')">Email <i class="fa fa-sort"></i></th>
-        <th 
-          [class.active]="order === 'Department'" 
-          (click)="setOrder('Department')">Department <i class="fa fa-sort"></i></th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let recipient of recipients | orderBy: order:reverse | paginate: { itemsPerPage: 5, currentPage: pageIndex }">
-        <td>{{recipient.EmailAddress}}</td>
-        <td>{{recipient.Department}}</td>
-        <td>
-          <button class="btn" [routerLink]="['/recipients/edit', recipient.id]">
-            <i class="fa fa-lg fa-pencil-square-o"></i>
-          </button>
-          <button class="btn" (click)="deleteRecipient.next(recipient.id)">
-            <i class="fa fa-lg fa-trash-o fa-red"></i>
-          </button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <pagination-controls (pageChange)="pageIndex = $event"></pagination-controls>
+  <thead>
+    <tr>
+      <th>Email <i class="fa fa-sort" (click)="setOrder('EmailAddress')"></i>
+        <input class="search-input" (keyup)="applyFilter('EmailAddress', $event.target.value)"/>
+      </th>
+      <th>Department <i class="fa fa-sort" (click)="setOrder('Department')"></i>
+        <input class="search-input" (keyup)="applyFilter('Department', $event.target.value)"/>
+      </th>
+      <th>
+        <button mat-raised-button color="primary" [routerLink]="['/recipients/edit', 'new']">
+          <i class="fa fa-lg fa-plus-square"></i> Add
+        </button>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let recipient of recipients | filterBy: filter | orderBy: order:reverse 
+    | paginate: { itemsPerPage: itemsPerPage, currentPage: pageIndex }">
+      <td>{{recipient.EmailAddress}}</td>
+      <td>{{recipient.Department}}</td>
+      <td>
+        <button class="btn" [routerLink]="['/recipients/edit', recipient.id]">
+          <i class="fa fa-lg fa-pencil-square-o"></i>
+        </button>
+        <button class="btn" (click)="deleteRecipient.next(recipient.id)">
+          <i class="fa fa-lg fa-trash-o fa-red"></i>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<fieldset>
+  <div class="row">
+    <div class="col-md-7 pagination-footer">
+      <pagination-template class="float-right" #p="paginationApi" 
+      (pageChange)="pageChange($event)" 
+      (pageBoundsCorrection)="pageBoundsCorrection($event)">
+          <ul class="ngx-pagination">
+            <li class="pagination-previous">
+              <a [class.disabled]="p.isFirstPage()"
+                (click)="p.previous()"
+                class="page-link">
+              </a>
+            </li>
+            <li *ngFor="let page of p.pages"
+                [class.active]="p.getCurrent() === page.value"
+                class="page-item">
+              <a (click)="p.setCurrent(page.value)"
+                class="page-link">{{ page.label }}
+              </a>
+            </li>
+            <li class="pagination-next">
+              <a [class.disabled]="p.isLastPage()"
+                (click)="p.next()"
+                class="page-link">
+              </a>
+            </li>
+          </ul>
+      </pagination-template>
+    </div>
+    <div class="col-md-5">
+      <mat-form-field class="float-right mt-10">
+        <mat-label>Items per page</mat-label>
+        <mat-select [(value)]="itemsPerPage">
+          <mat-option [value]="5">5</mat-option>
+          <mat-option [value]="10">10</mat-option>
+          <mat-option [value]="20">20</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+</fieldset>
