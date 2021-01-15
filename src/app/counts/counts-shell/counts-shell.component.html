@@ -1,0 +1,4 @@
+<h2>Counts</h2>
+<app-date-picker (dateSelected)="getCounts($event)"></app-date-picker>
+<br>
+<div *ngIf="submitted && !loading">The email counts for {{dateSelected | date}} are: <b>{{count}}</b></div>

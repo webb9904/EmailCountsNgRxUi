@@ -17,13 +17,15 @@ import { RecipientReducer } from './recipients/recipient.reducer';
 import { OrderModule } from 'ngx-order-pipe';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FilterPipeModule } from 'ngx-filter-pipe';
+import { CountsShellComponent } from './counts/counts-shell/counts-shell.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RecipientsListComponent,
     RecipientsTableComponent,
-    RecipientsEditComponent
+    RecipientsEditComponent,
+    CountsShellComponent
   ],
   imports: [
     BrowserModule,
