@@ -3,3 +3,19 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.ml-10 {
+    margin-left: 10px;
+}
+
+.mt-10 {
+    margin-top: 10px;
+}
+
+.controls-container > * {
+    width: 100%;
+}
+
+.button-row {
+    margin: 5px;
+}
