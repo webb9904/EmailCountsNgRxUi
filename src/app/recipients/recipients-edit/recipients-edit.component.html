@@ -1,1 +1,27 @@
-<p>recipients-edit works!</p>
+<fieldset>
+    <legend>{{recipientId !== 'new' ? 'Modify' : 'Create'}} Recipient</legend>
+    <div class="container">
+        <form [formGroup]="recipientForm" (submit)="saveRecipient()">
+            <div class="controls-container">
+                <input type="hidden" formControlName="id">
+                <mat-form-field appearance="outline">
+                    <input formControlName="EmailAddress" matInput placeholder="Email Address*">
+                    <mat-error>This field is required, Please enter a valid email address</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-select formControlName="Department" placeholder="Department*">
+                        <mat-option>None</mat-option>
+                        <mat-option *ngFor="let department of departments" [value]="department.value">
+                            {{department.value}}
+                        </mat-option>
+                    </mat-select>
+                    <mat-error>This field is required, Please select a valid department</mat-error>
+                </mat-form-field>
+                <mat-dialog-actions class="class button-row">
+                    <button type="submit" mat-raised-button color="primary" [disabled]="!recipientForm.valid">Submit</button>
+                    <button class="ml-10" mat-raised-button color="warn" (click)="goBack()">Cancel</button>
+                </mat-dialog-actions>
+            </div>
+        </form>
+    </div>
+</fieldset>
