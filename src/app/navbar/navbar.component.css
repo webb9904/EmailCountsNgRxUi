@@ -2,11 +2,19 @@
     color: #fafafa; 
 }
 
-.nav-link:hover {
+/* .nav-link:hover {
     text-decoration: underline;
     font-style: italic;
-}
+} */
 
-.mat-toolbar.mat-primary {
+/* .nav-link:focus {
+    outline: 0 none;
+    outline-offset: 100;
+    border-color: #007ad9;
+    border-radius: 0.2rem;
+    box-shadow: 0 0 0 0.2em #8dcdff;
+} */
+
+/* .mat-toolbar.mat-primary {
     background: #343a40;
-}
+} */
