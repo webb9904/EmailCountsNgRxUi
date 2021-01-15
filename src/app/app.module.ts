@@ -16,6 +16,7 @@ import { RecipientEffects } from './recipients/recipient.effects';
 import { RecipientReducer } from './recipients/recipient.reducer';
 import { OrderModule } from 'ngx-order-pipe';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { FilterPipeModule } from 'ngx-filter-pipe';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     MaterialModule,
     SharedModule,
     OrderModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    FilterPipeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
