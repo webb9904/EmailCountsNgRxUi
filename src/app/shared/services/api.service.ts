@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 export class ApiService {
 
   devBaseUri: string = 'http://localhost:3000/';
+  baseUri: string = 'https://gc6ns7mk5b.execute-api.eu-west-1.amazonaws.com/test/';
 
   constructor(private httpClient: HttpClient) {
   }
