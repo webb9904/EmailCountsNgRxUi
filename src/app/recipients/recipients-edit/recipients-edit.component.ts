@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/models/appState';
 import { RecipientService } from '../recipient.service';
+import * as recipientSelectors from "../recipient.selectors";
 
 @Component({
   selector: 'app-recipients-edit',
@@ -54,8 +55,10 @@ export class RecipientsEditComponent implements OnInit {
   }
 
   getRecipient() {
-    this.recipientsService.loadRecipient(this.recipientId)
-    .subscribe(recipient => this.recipientForm.patchValue(recipient));
+    this.store.select(recipientSelectors.getRecipientById(this.recipientId))
+    .subscribe((r) => {
+      this.recipientForm.patchValue(r);
+    });
   }
 
   buildForm() {
