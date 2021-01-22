@@ -3,7 +3,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { AppState } from 'src/app/models/appState';
 import { Recipient } from '../recipient';
-import * as recipientActions from '../recipient.actions';
+import * as recipientActions from '../state/recipient.actions';
 
 @Component({
   selector: 'app-recipients-list',

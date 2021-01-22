@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/models/appState';
 import { RecipientService } from '../recipient.service';
-import * as recipientSelectors from "../recipient.selectors";
+import * as recipientSelectors from "../state/recipient.selectors";
 
 @Component({
   selector: 'app-recipients-edit',

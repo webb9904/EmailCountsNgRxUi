@@ -1,5 +1,5 @@
 import { createReducer, on } from '@ngrx/store';
-import { Recipient } from './recipient';
+import { Recipient } from '../recipient';
 import * as recipientActions from './recipient.actions';
 
 export interface State {

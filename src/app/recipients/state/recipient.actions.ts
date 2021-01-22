@@ -1,5 +1,5 @@
 import { createAction, props } from "@ngrx/store";
-import { Recipient } from "./recipient";
+import { Recipient } from "../recipient";
 
 export const LoadRecipientsAction = createAction(
     'LOAD_RECIPIENTS'
