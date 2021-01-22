@@ -33,31 +33,12 @@
 <fieldset>
   <div class="row">
     <div class="col-md-7 pagination-footer">
-      <pagination-template class="float-right" #p="paginationApi" 
-      (pageChange)="pageChange($event)" 
+      <pagination-controls class="float-right"
+      (pageChange)="pageChange($event)"
+      previousLabel=""
+      nextLabel=""
       (pageBoundsCorrection)="pageBoundsCorrection($event)">
-          <ul class="ngx-pagination">
-            <li class="pagination-previous">
-              <a [class.disabled]="p.isFirstPage()"
-                (click)="p.previous()"
-                class="page-link">
-              </a>
-            </li>
-            <li *ngFor="let page of p.pages"
-                [class.active]="p.getCurrent() === page.value"
-                class="page-item">
-              <a (click)="p.setCurrent(page.value)"
-                class="page-link">{{ page.label }}
-              </a>
-            </li>
-            <li class="pagination-next">
-              <a [class.disabled]="p.isLastPage()"
-                (click)="p.next()"
-                class="page-link">
-              </a>
-            </li>
-          </ul>
-      </pagination-template>
+      </pagination-controls>
     </div>
     <div class="col-md-5">
       <mat-form-field class="float-right mt-10">

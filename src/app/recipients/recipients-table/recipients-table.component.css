@@ -21,6 +21,7 @@ th {
     font-weight: normal !important;
 }
 
+/* search input section */
 .search-input {
     margin-left: 10px; 
     border-radius: 0.3rem;
@@ -33,66 +34,14 @@ th {
     border: 2px solid #3f51b5;
 }
 
-/* .search-input:focus {
-    outline: 0 none;
-    outline-offset: 100;
-    border-color: #007ad9;
-    box-shadow: 0 0 0 0.2em #8dcdff;
-}
-.mat-raised-button:focus {
-    outline: 0 none;
-    outline-offset: 100;
-    border-color: #007ad9;
-    box-shadow: 0 0 0 0.2em #8dcdff;
-} */
-
 /* pagination section */
-.active .page-link {
+pagination-controls ::ng-deep .ngx-pagination .current {
+    padding: 0.1875rem 0.625rem;
     background: #3f51b5 !important;
     border-color: #3f51b5 !important;
     border-radius: 0.2rem;
-    color: #fefefe !important;
+    color: #fefefe;
     cursor: default;
-}
-
-a.page-link {
-    border: none !important;
-}
-
-.ngx-pagination {
-    margin-left: 0;
-    margin-bottom: 1rem;
-}
-
-.ngx-pagination li {
-    display: inline-block;
-}
-
-.ngx-pagination .disabled {
-    padding: 0.1875rem 0.625rem;
-    color: #cacaca;
-    cursor: default;
-}
-
-.ngx-pagination a, .ngx-pagination button {
-    color: #0a0a0a;
-    display: block;
-    padding: 0.1875rem 0.625rem;
-    border-radius: 0;
-}
-
-.ngx-pagination .pagination-previous a::before,
-.ngx-pagination .pagination-previous.disabled::before { 
-    content: '«';
-    display: inline-block;
-    margin-right: 0.5rem; 
-}
-
-.ngx-pagination .pagination-next a::after,
-.ngx-pagination .pagination-next.disabled::after {
-    content: '»';
-    display: inline-block;
-    margin-left: 0.5rem; 
 }
 
 .pagination-footer {
