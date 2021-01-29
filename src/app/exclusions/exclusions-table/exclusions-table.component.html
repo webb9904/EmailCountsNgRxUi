@@ -2,10 +2,10 @@
     <thead>
         <tr>
             <th>Domain <i class="fa fa-sort" (click)="setOrder('Domain')"></i>
-                <input class="search-input" (keyup)="applyFilter('Domain', $event.target.value)" (blur)="test($event)"/>
+                <input class="search-input" (keyup)="applyFilter('Domain', $event.target.value)"/>
             </th>
             <th>Full Address <i class="fa fa-sort" (click)="setOrder('FullAddress')"></i>
-                <input class="search-input" (keyup)="applyFilter('FullAddress', $event.target.value)" (blur)="test($event)"/>
+                <input class="search-input" (keyup)="applyFilter('FullAddress', $event.target.value)"/>
             </th>
             <th>
                 <button mat-raised-button color="primary" [routerLink]="['/exclusions/edit', 'new']">

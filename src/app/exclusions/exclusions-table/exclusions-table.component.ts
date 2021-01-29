@@ -40,12 +40,4 @@ export class ExclusionsTableComponent {
   pageBoundsCorrection(event: number): void {
     this.pageIndex = event;
   }
-
-  test(event: any) {
-    if (!event.target.value) {
-      console.log('Empty');
-    } else {
-      console.log('Im not empty');
-    }
-  }
 }
