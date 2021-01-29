@@ -54,14 +54,16 @@ export class RecipientsEditComponent implements OnInit {
     }
   }
 
-  getRecipient() {
+  getRecipient(): void {
     this.store.select(recipientSelectors.getRecipientById(this.recipientId))
-    .subscribe((r) => {
-      this.recipientForm.patchValue(r);
-    });
+      .subscribe((result) => {
+        if (result) {
+          this.recipientForm.patchValue(result);
+        }
+      });
   }
 
-  buildForm() {
+  buildForm(): void {
     this.recipientForm = this.fb.group({
       id: [null],
       EmailAddress: ['', [Validators.required, Validators.email]],
@@ -69,18 +71,21 @@ export class RecipientsEditComponent implements OnInit {
     })
   }
 
-  goBack() {
+  goBack(): void {
     this.router.navigate(['recipients']);
   }
 
-  saveRecipient() {
+  saveRecipient(): void {
     if (this.isNewRecipient) {
-      this.recipientsService.addRecipient(this.recipientForm.value)
-      .subscribe(() => this.router.navigate(['recipients']));
+      const recipientToCreate = {
+        EmailAddress: this.recipientForm.get('EmailAddress').value,
+        Department: this.recipientForm.get('Department').value
+      };
+      this.recipientsService.addRecipient(recipientToCreate).subscribe(() => this.goBack());
     } else {
       const recipientToUpdate = { ...this.recipientForm.value };
       this.recipientsService.updateRecipient(recipientToUpdate, this.recipientId)
-      .subscribe(() => this.router.navigate(['recipients']));
+        .subscribe(() => this.goBack());
     }
   }
 }

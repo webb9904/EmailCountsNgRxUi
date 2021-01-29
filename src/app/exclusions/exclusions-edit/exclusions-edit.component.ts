@@ -33,14 +33,16 @@ export class ExclusionsEditComponent implements OnInit {
     }
   }
 
-  getExclusion() {
+  getExclusion(): void {
     this.store.select(exclusionSelectors.getExclusionById(this.exclusionId))
-    .subscribe((r) => {
-      this.exclusionForm.patchValue(r);
+    .subscribe((result) => {
+      if (result) {
+        this.exclusionForm.patchValue(result);
+      }
     });
   }
 
-  buildForm() {
+  buildForm(): void {
     this.exclusionForm = this.fb.group({
       id: [null],
       Domain: ['', Validators.required],
@@ -48,18 +50,21 @@ export class ExclusionsEditComponent implements OnInit {
     })
   }
 
-  goBack() {
+  goBack(): void {
     this.router.navigate(['exclusions']);
   }
 
-  saveExclusion() {
+  saveExclusion(): void {
     if (this.isNewExclusion) {
-      this.exclusionService.addExclusion(this.exclusionForm.value)
-      .subscribe(() => this.router.navigate(['exclusions']));
+      const exclusionToAdd = {
+        Domain: this.exclusionForm.get('Domain').value,
+        FullAddress: this.exclusionForm.get('FullAddress').value
+      }
+      this.exclusionService.addExclusion(exclusionToAdd).subscribe(() => this.goBack());
     } else {
       const exclusionToUpdate = { ...this.exclusionForm.value };
       this.exclusionService.updateExclusion(exclusionToUpdate, this.exclusionId)
-      .subscribe(() => this.router.navigate(['exclusions']));
+      .subscribe(() => this.goBack());
     }
   }
 }

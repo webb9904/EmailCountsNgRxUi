@@ -25,7 +25,7 @@ export class RecipientsListComponent implements OnInit {
     this.store.dispatch(recipientActions.LoadRecipientsAction());
   }
 
-  deleteRecipient(id: number) {
+  deleteRecipient(id: number): void {
     this.store.dispatch(recipientActions.DeleteRecipientAction({ recipientId: id }));
   }
 }
