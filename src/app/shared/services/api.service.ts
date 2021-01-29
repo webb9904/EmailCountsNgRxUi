@@ -14,7 +14,8 @@ export class ApiService {
   }
 
   private buildUri(uri: string): string {
-    return `${this.devBaseUri}${uri}`;
+    //return `${this.devBaseUri}${uri}`; //TODO local dev
+    return `${this.baseUri}${uri}`;
   }
 
   public getRequest(uri: string): Observable<any> {
