@@ -1,4 +1,5 @@
 <h2>Exclusions</h2>
 <app-exclusions-table 
-    [exclusions]="exclusions$ | async">
+    [exclusions]="exclusions$ | async"
+    (deleteExclusion)="deleteExclusion($event)">
 </app-exclusions-table>
