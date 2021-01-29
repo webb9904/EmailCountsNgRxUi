@@ -21,4 +21,17 @@ export class ExclusionEffects {
             )
         )
     });
+
+    deleteExclusion$ = createEffect(() => {
+        return this.actions$
+        .pipe(
+            ofType(exclusionActions.DeleteExclusionAction),
+            mergeMap(action => 
+                this.exclusionService.deleteExclusion(action.exclusionId)
+                .pipe(
+                    map(() => exclusionActions.DeleteExclusionSuccessAction({ exclusionId: action.exclusionId }))
+                )
+            )
+        )
+    });
 }
