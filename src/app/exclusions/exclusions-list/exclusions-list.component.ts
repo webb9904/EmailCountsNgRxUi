@@ -24,4 +24,8 @@ export class ExclusionsListComponent implements OnInit {
   loadExclusions(): void {
     this.store.dispatch(exclusionActions.LoadExclusionsAction());
   }
+
+  deleteExclusion(id: number): void {
+    this.store.dispatch(exclusionActions.DeleteExclusionAction({ exclusionId: id }));
+  }
 }
