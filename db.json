@@ -100,5 +100,157 @@
       "EmailAddress": "Lisa.Gooderham@havenpower.com",
       "Department": "Direct Admin"
     }
+  ],
+  "exclusions": [
+    {
+      "id": 1,
+      "Domain": "draxgroup.onmicrosoft.com",
+      "FullAddress": "draxgroup.onmicrosoft.com"
+    },
+    {
+      "id": 2,
+      "Domain": "service-now.com",
+      "FullAddress": "service-now.com"
+    },
+    {
+      "id": 3,
+      "Domain": "salesforce.com",
+      "FullAddress": "salesforce.com"
+    },
+    {
+      "id": 4,
+      "Domain": "e.wowcher.co.uk",
+      "FullAddress": "info@e.wowcher.co.uk"
+    },
+    {
+      "id": 5,
+      "Domain": "smartdcc.co.uk",
+      "FullAddress": "smartdcc.co.uk"
+    },
+    {
+      "id": 6,
+      "Domain": "companies-house.gov.uk",
+      "FullAddress": "companies-house.gov.uk"
+    },
+    {
+      "id": 7,
+      "Domain": "linkedin.com",
+      "FullAddress": "linkedin.com"
+    },
+    {
+      "id": 8,
+      "Domain": "email.healthunlocked.com",
+      "FullAddress": "notifications@email.healthunlocked.com"
+    },
+    {
+      "id": 9,
+      "Domain": "microsoft.com",
+      "FullAddress": "microsoft.com"
+    },
+    {
+      "id": 10,
+      "Domain": "messaging.microsoft.com",
+      "FullAddress": "quarantine@messaging.microsoft.com"
+    },
+    {
+      "id": 11,
+      "Domain": "r.grouponmail.co.uk",
+      "FullAddress": "noreply@r.grouponmail.co.uk"
+    },
+    {
+      "id": 12,
+      "Domain": "outlook.com",
+      "FullAddress": "postmaster@outlook.com"
+    },
+    {
+      "id": 13,
+      "Domain": "companieshouse.gov.uk",
+      "FullAddress": "companieshouse.gov.uk"
+    },
+    {
+      "id": 14,
+      "Domain": "responsys.zoopla.co.uk",
+      "FullAddress": "responsys.zoopla.co.uk"
+    },
+    {
+      "id": 15,
+      "Domain": "e.dealzippy.co.uk",
+      "FullAddress": "e.dealzippy.co.uk"
+    },
+    {
+      "id": 16,
+      "Domain": "advancedcollection.co.uk",
+      "FullAddress": "advancedcollection.co.uk"
+    },
+    {
+      "id": 17,
+      "Domain": "Balfourmanson.co.uk",
+      "FullAddress": "Balfourmanson.co.uk"
+    },
+    {
+      "id": 18,
+      "Domain": "baringa.com",
+      "FullAddress": "baringa.com"
+    },
+    {
+      "id": 19,
+      "Domain": "Birketts.co.uk",
+      "FullAddress": "Birketts.co.uk"
+    },
+    {
+      "id": 20,
+      "Domain": "bluegroupinc.com",
+      "FullAddress": "bluegroupinc.com"
+    },
+    {
+      "id": 21,
+      "Domain": "candc-uk.com",
+      "FullAddress": "candc-uk.com"
+    },
+    {
+      "id": 22,
+      "Domain": "capgemini.com",
+      "FullAddress": "capgemini.com"
+    },
+    {
+      "id": 23,
+      "Domain": "cgi.com",
+      "FullAddress": "cgi.com"
+    },
+    {
+      "id": 24,
+      "Domain": "claritydata.com",
+      "FullAddress": "claritydata.com"
+    },
+    {
+      "id": 25,
+      "Domain": "cornwallenergy",
+      "FullAddress": "cornwallenergy"
+    },
+    {
+      "id": 26,
+      "Domain": "drax.com",
+      "FullAddress": "drax.com"
+    },
+    {
+      "id": 27,
+      "Domain": "elexon.co.uk",
+      "FullAddress": "elexon.co.uk"
+    },
+    {
+      "id": 28,
+      "Domain": "energyassets.co.uk",
+      "FullAddress": "energyassets.co.uk"
+    },
+    {
+      "id": 29,
+      "Domain": "framtrade.co.uk",
+      "FullAddress": "framtrade.co.uk"
+    },
+    {
+      "id": 30,
+      "Domain": "imserv.com",
+      "FullAddress": "imserv.com"
+    }
   ]
 }
