@@ -1,0 +1,22 @@
+<fieldset>
+    <legend>{{exclusionId !== 'new' ? 'Modify' : 'Create'}} Exclusion</legend>
+    <div class="container">
+        <form [formGroup]="exclusionForm" (submit)="saveExclusion()">
+            <div class="controls-container">
+                <input type="hidden" formControlName="id">
+                <mat-form-field appearance="outline">
+                    <input formControlName="Domain" matInput placeholder="Domain*">
+                    <mat-error>This field is required, Please enter a valid domain address</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <input formControlName="FullAddress" matInput placeholder="Email Address*">
+                    <mat-error>This field is required, Please enter a valid email address</mat-error>
+                </mat-form-field>
+                <mat-dialog-actions class="class button-row">
+                    <button type="submit" mat-raised-button color="primary" [disabled]="!exclusionForm.valid">Submit</button>
+                    <button class="ml-10" mat-raised-button color="warn" (click)="goBack()">Cancel</button>
+                </mat-dialog-actions>
+            </div>
+        </form>
+    </div>
+</fieldset>

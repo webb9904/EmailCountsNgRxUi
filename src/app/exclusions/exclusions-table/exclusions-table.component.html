@@ -1,0 +1,51 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Domain <i class="fa fa-sort" (click)="setOrder('Domain')"></i>
+                <input class="search-input" (keyup)="applyFilter('Domain', $event.target.value)" (blur)="test($event)"/>
+            </th>
+            <th>Full Address <i class="fa fa-sort" (click)="setOrder('FullAddress')"></i>
+                <input class="search-input" (keyup)="applyFilter('FullAddress', $event.target.value)" (blur)="test($event)"/>
+            </th>
+            <th>
+                <button mat-raised-button color="primary" [routerLink]="['/exclusions/edit', 'new']">
+                    <i class="fa fa-lg fa-plus-square"></i> Add
+                </button>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let exclusion of exclusions | filterBy: filter | orderBy: order:reverse 
+        | paginate: { itemsPerPage: itemsPerPage, currentPage: pageIndex }">
+            <td>{{exclusion.Domain}}</td>
+            <td>{{exclusion.FullAddress}}</td>
+            <td>
+                <button class="btn" [routerLink]="['/exclusions/edit', exclusion.id]">
+                    <i class="fa fa-lg fa-pencil-square-o"></i>
+                </button>
+                <button class="btn" (click)="deleteExclusion.next(exclusion.id)">
+                    <i class="fa fa-lg fa-trash-o fa-red"></i>
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<fieldset>
+    <div class="row">
+        <div class="col-md-7 pagination-footer">
+            <pagination-controls class="float-right" (pageChange)="pageChange($event)" previousLabel="" nextLabel=""
+                (pageBoundsCorrection)="pageBoundsCorrection($event)">
+            </pagination-controls>
+        </div>
+        <div class="col-md-5">
+            <mat-form-field class="float-right mt-10">
+                <mat-label>Items per page</mat-label>
+                <mat-select [(value)]="itemsPerPage">
+                    <mat-option [value]="5">5</mat-option>
+                    <mat-option [value]="10">10</mat-option>
+                    <mat-option [value]="20">20</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+</fieldset>

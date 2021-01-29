@@ -18,6 +18,11 @@ import { OrderModule } from 'ngx-order-pipe';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FilterPipeModule } from 'ngx-filter-pipe';
 import { CountsShellComponent } from './counts/counts-shell/counts-shell.component';
+import { ExclusionsListComponent } from './exclusions/exclusions-list/exclusions-list.component';
+import { ExclusionsTableComponent } from './exclusions/exclusions-table/exclusions-table.component';
+import { ExclusionsEditComponent } from './exclusions/exclusions-edit/exclusions-edit.component';
+import { ExclusionReducer } from './exclusions/state/exclusion.reducer';
+import { ExclusionEffects } from './exclusions/state/exclusion.effects';
 
 @NgModule({
   declarations: [
@@ -25,15 +30,26 @@ import { CountsShellComponent } from './counts/counts-shell/counts-shell.compone
     RecipientsListComponent,
     RecipientsTableComponent,
     RecipientsEditComponent,
-    CountsShellComponent
+    CountsShellComponent,
+    ExclusionsListComponent,
+    ExclusionsTableComponent,
+    ExclusionsEditComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    StoreModule.forRoot({recipients: RecipientReducer}),
-    StoreDevtoolsModule.instrument({ maxAge: 25 }),
-    EffectsModule.forRoot([RecipientEffects]),
+    StoreModule.forRoot({
+      recipients: RecipientReducer,
+      exclusions: ExclusionReducer
+    }),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25
+    }),
+    EffectsModule.forRoot([
+      RecipientEffects,
+      ExclusionEffects
+    ]),
     MaterialModule,
     SharedModule,
     OrderModule,
