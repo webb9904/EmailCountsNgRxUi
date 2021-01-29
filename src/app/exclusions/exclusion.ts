@@ -1,5 +1,5 @@
 export interface Exclusion {
-    id: number;
+    id?: number;
     Domain: string;
     FullAddress: string;
 }

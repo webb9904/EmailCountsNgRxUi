@@ -1,5 +1,5 @@
 export interface Recipient {
-    id: number;
+    id?: number;
     EmailAddress: string;
     Department: string;
 }
