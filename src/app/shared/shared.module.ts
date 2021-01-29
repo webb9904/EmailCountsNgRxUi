@@ -7,6 +7,10 @@ import { NavbarComponent } from '../navbar/navbar.component';
 import { DatePickerComponent } from './date-picker/date-picker.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { OrderModule } from 'ngx-order-pipe';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { FilterPipeModule } from 'ngx-filter-pipe';
 
 @NgModule({
   declarations: [
@@ -15,6 +19,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     CommonModule,
+    RouterModule,
     HttpClientModule,
     MaterialModule,
     ReactiveFormsModule,
@@ -22,8 +27,13 @@ import { ReactiveFormsModule } from '@angular/forms';
   exports: [
     NavbarComponent,
     DatePickerComponent,
+    CommonModule,
+    RouterModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    OrderModule,
+    NgxPaginationModule,
+    FilterPipeModule
   ],
   providers: []
 })
