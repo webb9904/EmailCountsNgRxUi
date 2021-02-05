@@ -2,3 +2,5 @@
 <app-date-picker (dateSelected)="getCounts($event)"></app-date-picker>
 <br>
 <div *ngIf="submitted && !loading">The email counts for {{dateSelected | date}} are: <b>{{count}}</b></div>
+
+<mat-progress-spinner *ngIf="loading" mode="indeterminate" style="margin-left: 45%;"></mat-progress-spinner>
