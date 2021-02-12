@@ -10,6 +10,7 @@ import { Recipient } from '../recipient';
 export class RecipientsTableComponent {
 
   @Input() recipients: Recipient[];
+  @Input() errorMessage: string;
   @Output() deleteRecipient = new EventEmitter<Recipient>();
 
   filter: any;

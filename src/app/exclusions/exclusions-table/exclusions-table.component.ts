@@ -10,6 +10,7 @@ import { Exclusion } from '../exclusion';
 export class ExclusionsTableComponent {
 
   @Input() exclusions: Exclusion[];
+  @Input() errorMessage: string;
   @Output() deleteExclusion = new EventEmitter<Exclusion>();
 
   filter: any;

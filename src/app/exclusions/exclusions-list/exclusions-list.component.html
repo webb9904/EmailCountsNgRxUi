@@ -1,5 +1,6 @@
 <h2>Exclusions</h2>
 <app-exclusions-table 
     [exclusions]="exclusions$ | async"
+    [errorMessage]="errorMessage$ | async"
     (deleteExclusion)="deleteExclusion($event)">
 </app-exclusions-table>
