@@ -12,7 +12,6 @@ export class RecipientService {
   }
 
   public loadRecipients(): Observable<Recipient[]> {
-    //return this.apiService.getRequest('recipients'); //TODO local dev
     return this.apiService.getRequest('getrecipientssummary');
   }
 
@@ -21,17 +20,14 @@ export class RecipientService {
   }
 
   public addRecipient(recipient: Recipient): Observable<Recipient> {
-    //return this.apiService.postRequest('recipients', recipient); //TODO local dev
     return this.apiService.postRequest('createrecipient', recipient);
   }
 
   public updateRecipient(recipient: Recipient, id: number) {
-    //return this.apiService.putRequest(`recipients/${id}`, recipient); //TODO local dev
     return this.apiService.putRequest(`updaterecipient`, recipient);
   }
 
   public deleteRecipient(id: number) {
-    //return this.apiService.deleteRequest(`recipients/${id}`); //TODO local dev
     return this.apiService.deleteRequest(`deleterecipient/${id}`);
   }
 }
