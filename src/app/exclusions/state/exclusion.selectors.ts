@@ -1,10 +1,12 @@
 import { createFeatureSelector, createSelector } from "@ngrx/store";
 import { State } from "./exclusion.reducer";
 
-const selectExclusions = createFeatureSelector<State>('exclusions');
+const exclusionState = createFeatureSelector<State>('exclusions');
 
-export const getExclusionById = (id) => createSelector(selectExclusions, (allExclusions) => {
+export const getExclusionById = (id) => createSelector(exclusionState, (allExclusions) => {
     return allExclusions.exclusions.find(e => {
         return e.id.toString() === id;
     });
 });
+
+export const getError = createSelector(exclusionState, state => state.error);

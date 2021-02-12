@@ -10,6 +10,11 @@ export const LoadRecipientsSuccessAction = createAction(
     props<{ recipients: Recipient[] }>()
 );
 
+export const LoadRecipientsFailureAction = createAction(
+    'LOAD_RECIPIENTS_FAILURE',
+    props<{ error: string }>()
+);
+
 export const DeleteRecipientAction = createAction(
     'DELETE_RECIPIENT',
     props<{ recipientId: number }>()
@@ -18,4 +23,9 @@ export const DeleteRecipientAction = createAction(
 export const DeleteRecipientSuccessAction = createAction(
     'DELETE_RECIPIENT_SUCCESS',
     props<{ recipientId: number }>()
+);
+
+export const DeleteRecipientFailureAction = createAction(
+    'DELETE_RECIPIENT_FAILURE',
+    props<{ error: string }>()
 );

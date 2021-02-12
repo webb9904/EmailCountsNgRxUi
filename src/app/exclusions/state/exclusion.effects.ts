@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { ExclusionService } from '../exclusion.service';
 import * as exclusionActions from './exclusion.actions';
-import { map, mergeMap } from "rxjs/operators";
+import { map, mergeMap, catchError } from "rxjs/operators";
+import { of } from 'rxjs';
 
 @Injectable()
 export class ExclusionEffects {
@@ -16,7 +17,8 @@ export class ExclusionEffects {
             ofType(exclusionActions.LoadExclusionsAction),
             mergeMap(() => this.exclusionService.loadExclusions()
                 .pipe(
-                    map(exclusions => exclusionActions.LoadExclusionsSuccessAction({ exclusions }))
+                    map(exclusions => exclusionActions.LoadExclusionsSuccessAction({ exclusions })),
+                    catchError(error => of(exclusionActions.LoadExclusionsFailureAction({ error })))
                 )
             )
         )
@@ -29,7 +31,8 @@ export class ExclusionEffects {
             mergeMap(action => 
                 this.exclusionService.deleteExclusion(action.exclusionId)
                 .pipe(
-                    map(() => exclusionActions.DeleteExclusionSuccessAction({ exclusionId: action.exclusionId }))
+                    map(() => exclusionActions.DeleteExclusionSuccessAction({ exclusionId: action.exclusionId })),
+                    catchError(error => of(exclusionActions.DeleteExclusionsFailureAction({ error })))
                 )
             )
         )

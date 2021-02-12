@@ -10,6 +10,11 @@ export const LoadExclusionsSuccessAction = createAction(
     props<{ exclusions: Exclusion[] }>()
 );
 
+export const LoadExclusionsFailureAction = createAction(
+    'LOAD_EXCLUSIONS_FAILURE',
+    props<{ error: string }>()
+);
+
 export const DeleteExclusionAction = createAction(
     'DELETE_EXCLUSION',
     props<{ exclusionId: number }>()
@@ -18,4 +23,9 @@ export const DeleteExclusionAction = createAction(
 export const DeleteExclusionSuccessAction = createAction(
     'DELETE_EXCLUSION_SUCCESS',
     props<{ exclusionId: number }>()
+);
+
+export const DeleteExclusionsFailureAction = createAction(
+    'DELETE_EXCLUSIONS_FAILURE',
+    props<{ error: string }>()
 );
